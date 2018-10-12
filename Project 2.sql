@@ -12,7 +12,7 @@ CREATE TABLE Disk(
 Disk_ID	INT	PRIMARY KEY	IDENTITY,
 Disk_Name VARCHAR(20) NOT NULL,
 Relase_Date datetime not null,
-Lended varchar(20) not null
+LendedStatus varchar(20) not null,
 );
 
 CREATE TABLE Borrower(
@@ -35,7 +35,7 @@ Arist_Name char(20) not null
 );
 
 CREATE TABLE diskHasArtist(
-Disk_ID int REFERENCES Disk(Disk_ID),
-Artist_ID int REFERENCES Artist(Artist_ID)
+Disk_ID int not null REFERENCES Disk(Disk_ID),
+Artist_ID int not null REFERENCES Artist(Artist_ID)
 );
 
